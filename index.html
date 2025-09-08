@@ -15,89 +15,82 @@
             font-family: 'Arial', sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            padding: 20px;
+            padding: 8px;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            box-shadow: 0 16px 32px rgba(0,0,0,0.08);
             overflow: hidden;
         }
         
         .header {
             background: linear-gradient(135deg, #4CAF50, #45a049);
             color: white;
-            padding: 25px;
+            padding: 14px;
             text-align: center;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 6px;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .header p {
-            font-size: 1.2em;
+            font-size: 1em;
             opacity: 0.9;
         }
         
         .simulation-area {
             display: flex;
-            min-height: 600px;
+            min-height: 260px;
         }
         
         .elevator-shaft {
             flex: 2;
             background: linear-gradient(to bottom, #f0f8ff, #e6f3ff);
             position: relative;
-            padding: 40px;
+            padding: 16px;
             border-right: 3px solid #ddd;
         }
         
         .floor {
             position: absolute;
-            right: 40px;
-            left: 40px;
-            height: 80px;
+            right: 16px;
+            left: 16px;
+            height: 44px;
             border: 3px solid #333;
             border-radius: 10px;
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 0 20px;
+            padding: 0 10px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
         .floor-label {
             font-weight: bold;
-            font-size: 1.4em;
+            font-size: 1.1em;
             color: #333;
         }
         
-        .color-sensor {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 3px solid #333;
-            background: #ccc;
-            transition: all 0.3s ease;
-        }
+        /* Removed optical sensors in simplified version */
         
         .robot {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 60px;
+            width: 56px;
+            height: 40px;
             background: linear-gradient(135deg, #FFA726, #FF7043);
-            border-radius: 15px;
+            border-radius: 10px;
             border: 3px solid #333;
-            transition: all 1s ease-in-out;
+            transition: all 0.6s ease-in-out;
             box-shadow: 0 6px 12px rgba(0,0,0,0.2);
             z-index: 10;
         }
@@ -108,111 +101,32 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1.8em;
+            font-size: 1.2em;
         }
         
         .robot-light {
             position: absolute;
-            top: -15px;
+            top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: #666;
             border: 2px solid #333;
             transition: all 0.3s ease;
         }
         
-        .controls {
-            flex: 1;
-            padding: 30px;
-            background: #f8f9fa;
-        }
-        
-        .control-section {
-            margin-bottom: 30px;
-            padding: 20px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .control-section h3 {
-            margin-bottom: 15px;
-            color: #333;
-            font-size: 1.3em;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 8px;
-        }
-        
-        .button {
-            padding: 12px 24px;
-            margin: 8px;
-            border: none;
-            border-radius: 25px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        
-        .touch-led {
-            background: linear-gradient(135deg, #4CAF50, #45a049);
-            color: white;
-        }
-        
-        .touch-led:hover {
-            background: linear-gradient(135deg, #45a049, #3d8b40);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-        
-        .bumper {
-            background: linear-gradient(135deg, #FF5722, #E64A19);
-            color: white;
-        }
-        
-        .bumper:hover {
-            background: linear-gradient(135deg, #E64A19, #D84315);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-        
-        .color-control {
-            background: linear-gradient(135deg, #9C27B0, #7B1FA2);
-            color: white;
-            margin: 5px;
-        }
-        
-        .color-control:hover {
-            background: linear-gradient(135deg, #7B1FA2, #6A1B9A);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-        
-        .obstacle-btn {
-            background: linear-gradient(135deg, #FF9800, #F57C00);
-            color: white;
-        }
-        
-        .obstacle-btn:hover {
-            background: linear-gradient(135deg, #F57C00, #EF6C00);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-        }
-        
         .brain-screen {
             background: linear-gradient(135deg, #263238, #37474f);
             color: #4CAF50;
-            padding: 20px;
-            border-radius: 15px;
+            padding: 12px;
+            border-radius: 12px;
             font-family: 'Courier New', monospace;
-            font-size: 1.2em;
+            font-size: 1em;
             font-weight: bold;
             text-align: center;
-            min-height: 100px;
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -244,28 +158,7 @@
             color: white;
         }
         
-        .obstacle {
-            position: absolute;
-            width: 60px;
-            height: 40px;
-            background: linear-gradient(135deg, #795548, #5D4037);
-            border-radius: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 5;
-            border: 2px solid #333;
-        }
-        
-        .obstacle::before {
-            content: '🚧';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 1.5em;
-        }
+        /* Removed obstacle for simplified version */
         
         .moving {
             animation: pulse 0.5s infinite alternate;
@@ -280,6 +173,62 @@
             background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
             padding: 25px;
             border-top: 3px solid #2196F3;
+        }
+
+        /* Requirements and highlighting */
+        .requirements {
+            background: linear-gradient(135deg, #fffde7, #fff8e1);
+            padding: 12px 16px;
+            border-bottom: 3px solid #FFB300;
+        }
+
+        .requirements p {
+            color: #4E342E;
+            line-height: 1.5;
+            font-size: 0.95em;
+        }
+
+        .highlight-section {
+            padding: 2px 4px;
+            border-radius: 6px;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .highlight-section.active {
+            background: #FFF59D;
+            box-shadow: 0 0 0 3px rgba(255, 235, 59, 0.5) inset;
+        }
+
+        /* Top controls layout */
+        .top-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            align-items: stretch;
+            padding: 12px 16px 8px 16px;
+            background: #f8f9fa;
+            border-bottom: 3px solid #e0e0e0;
+        }
+
+        .top-controls .panel {
+            background: white;
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .top-controls .panel h3 {
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1em;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 4px;
+        }
+
+        .top-controls .group-inline {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
         
         .instructions h3 {
@@ -327,121 +276,72 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>VEX IQ Elevator Robot Simulation</h1>
-            <p>Interactive demonstration of elevator control programming</p>
+            <h1>Giả lập thang máy sử dụng VEX IQ</h1>
+            <p>Giả lập cách hoạt động của thang máy - dễ</p>
+        </div>
+        
+        <div class="requirements">
+            <p>
+                <span class="highlight-section" id="intro-1">Trong bài này, robot VEX IQ sẽ mô phỏng một chiếc thang máy đơn giản chỉ có 2 tầng.</span><br>
+                <span class="highlight-section" id="touchled-desc">Khi người dùng chạm vào TouchLED, robot sẽ “đi lên tầng trên” bằng cách chạy thẳng một đoạn cố định.</span><br>
+                <span class="highlight-section" id="distance-map">Giả sử khoảng cách giữa 2 tầng là 200mm.</span><br>
+                <span class="highlight-section" id="bumper-desc">Khi robot chạm vào Bumper (giả lập việc bấm nút xuống tầng), nó sẽ “đi xuống tầng dưới”.</span><br>
+                <span class="highlight-section" id="brain-desc">TouchLED đổi màu: xanh khi ở tầng 1, vàng khi đang di chuyển, đỏ khi đã đến tầng 2. Màn hình Brain hiển thị “Tầng 1”, “Đang di chuyển…”, hoặc “Tầng 2”.</span>
+            </p>
+        </div>
+
+        <div class="top-controls">
+            <div class="panel">
+                <h3>🎮 Điều khiển</h3>
+                <div class="group-inline">
+                    <button class="button touch-led" id="touchled">TouchLED - Đi lên</button>
+                    <button class="button bumper" id="bumper">Bumper - Đi xuống</button>
+                </div>
+            </div>
+            <div class="panel" style="flex: 1 1 280px; min-width: 260px;">
+                <h3>🖥️ Não</h3>
+                <div class="brain-screen" id="brain-screen">System Ready</div>
+            </div>
+            <div class="panel" style="flex: 0 1 240px; min-width: 220px; display:flex; flex-direction:column; justify-content:center;">
+                <h3>📊 Tình trạng của robot</h3>
+                <div class="status-indicator status-normal" id="status">Normal Operation</div>
+            </div>
         </div>
         
         <div class="simulation-area">
             <div class="elevator-shaft">
-                <!-- Floor 5 -->
-                <div class="floor" style="top: 40px;">
-                    <span class="floor-label">Floor 5</span>
-                    <div class="color-sensor" id="sensor-5"></div>
-                </div>
-                
-                <!-- Floor 4 -->
-                <div class="floor" style="top: 140px;">
-                    <span class="floor-label">Floor 4</span>
-                    <div class="color-sensor" id="sensor-4"></div>
-                </div>
-                
-                <!-- Floor 3 -->
-                <div class="floor" style="top: 240px;">
-                    <span class="floor-label">Floor 3</span>
-                    <div class="color-sensor" id="sensor-3"></div>
-                </div>
-                
                 <!-- Floor 2 -->
-                <div class="floor" style="top: 340px;">
-                    <span class="floor-label">Floor 2</span>
-                    <div class="color-sensor" id="sensor-2"></div>
+                <div class="floor" style="top: 60px;">
+                    <span class="floor-label">Tầng 2</span>
                 </div>
                 
                 <!-- Floor 1 (Ground) -->
-                <div class="floor" style="top: 440px;">
-                    <span class="floor-label">Floor 1</span>
-                    <div class="color-sensor" id="sensor-1"></div>
+                <div class="floor" style="top: 200px;">
+                    <span class="floor-label">Tầng 1</span>
                 </div>
                 
                 <!-- Robot -->
-                <div class="robot" id="robot" style="top: 440px;">
+                <div class="robot" id="robot" style="top: 200px;">
                     <div class="robot-light" id="robot-light"></div>
-                </div>
-                
-                <!-- Obstacle -->
-                <div class="obstacle" id="obstacle"></div>
-            </div>
-            
-            <div class="controls">
-                <div class="distance-info">
-                    <p>📏 Real Distance: 200m between floors</p>
-                    <p>🤖 Program Distance: 200mm per floor</p>
-                    <p>⚙️ Commands: drive forward/reverse 200mm</p>
-                </div>
-                
-                <div class="control-section">
-                    <h3>🎮 Robot Controls</h3>
-                    <button class="button touch-led" id="touchled">TouchLED - Go Up</button>
-                    <button class="button bumper" id="bumper">Bumper - Go Down</button>
-                </div>
-                
-                <div class="control-section">
-                    <h3>🔴 Floor Sensors (Optical)</h3>
-                    <button class="button color-control" onclick="setFloorColor(1, 'red')">Floor 1 - Red</button>
-                    <button class="button color-control" onclick="setFloorColor(2, 'red')">Floor 2 - Red</button>
-                    <button class="button color-control" onclick="setFloorColor(3, 'red')">Floor 3 - Red</button>
-                    <button class="button color-control" onclick="setFloorColor(4, 'red')">Floor 4 - Red</button>
-                    <button class="button color-control" onclick="setFloorColor(5, 'red')">Floor 5 - Red</button>
-                    <button class="button color-control" onclick="clearAllColors()">Clear All</button>
-                </div>
-                
-                <div class="control-section">
-                    <h3>🚧 Emergency Control</h3>
-                    <button class="button obstacle-btn" id="obstacle-btn">Toggle Obstacle</button>
-                </div>
-                
-                <div class="control-section">
-                    <h3>🖥️ Brain Screen</h3>
-                    <div class="brain-screen" id="brain-screen">System Ready</div>
-                </div>
-                
-                <div class="control-section">
-                    <h3>📊 Status</h3>
-                    <div class="status-indicator status-normal" id="status">Normal Operation</div>
                 </div>
             </div>
         </div>
         
-        <div class="instructions">
-            <h3>🎯 How to Use This Simulation</h3>
-            <ul>
-                <li><strong>TouchLED Button:</strong> Makes the robot move up one floor (200mm forward)</li>
-                <li><strong>Bumper Button:</strong> Makes the robot move down one floor (200mm reverse)</li>
-                <li><strong>Red Color Detection:</strong> Click any floor sensor to make it red - robot stops and shows "Arrived"</li>
-                <li><strong>Obstacle Detection:</strong> Toggle obstacle to trigger emergency stop with red light</li>
-                <li><strong>Brain Screen:</strong> Shows current robot status and floor information</li>
-                <li><strong>Robot Lights:</strong> Yellow = arrived at floor, Red = emergency stop, Gray = normal</li>
-            </ul>
-        </div>
     </div>
 
     <script>
-        let currentFloor = 1;
+        let currentFloor = 1; // 1 or 2
         let isMoving = false;
-        let obstacleActive = false;
         
         const robot = document.getElementById('robot');
         const robotLight = document.getElementById('robot-light');
         const brainScreen = document.getElementById('brain-screen');
         const status = document.getElementById('status');
-        const obstacle = document.getElementById('obstacle');
         
+        // Two-floor positions (px)
         const floorPositions = {
-            1: 440,
-            2: 340,
-            3: 240,
-            4: 140,
-            5: 40
+            1: 200,
+            2: 60
         };
         
         function updateBrainScreen(message) {
@@ -455,45 +355,39 @@
         
         function setRobotLight(color) {
             robotLight.style.background = color;
-            if (color === '#FFD700') { // Yellow
-                robotLight.style.boxShadow = '0 0 15px rgba(255, 215, 0, 0.8)';
-            } else if (color === '#F44336') { // Red
-                robotLight.style.boxShadow = '0 0 15px rgba(244, 67, 54, 0.8)';
+            if (color === '#FFD700') {
+                robotLight.style.boxShadow = '0 0 12px rgba(255, 215, 0, 0.8)';
+            } else if (color === '#F44336') {
+                robotLight.style.boxShadow = '0 0 12px rgba(244, 67, 54, 0.8)';
+            } else if (color === '#4CAF50') {
+                robotLight.style.boxShadow = '0 0 12px rgba(76, 175, 80, 0.6)';
             } else {
                 robotLight.style.boxShadow = 'none';
             }
         }
         
         function highlightDescription(sectionId) {
-            // Clear all previous highlights
             document.querySelectorAll('.highlight-section').forEach(section => {
                 section.classList.remove('active');
             });
-            
-            // Add highlight to specific section
             if (sectionId) {
                 const section = document.getElementById(sectionId);
                 if (section) {
                     section.classList.add('active');
-                    
-                    // Remove highlight after 3 seconds
-                    setTimeout(() => {
-                        section.classList.remove('active');
-                    }, 3000);
+                    setTimeout(() => section.classList.remove('active'), 2000);
                 }
             }
         }
         
         function moveRobot(targetFloor, direction) {
-            if (isMoving) return;
-            
+            if (isMoving || targetFloor === currentFloor) return;
             isMoving = true;
             robot.classList.add('moving');
             
-            const directionText = direction === 'up' ? 'Going up' : 'Going down';
-            updateBrainScreen(directionText);
-            updateStatus(`Moving ${direction}`, 'normal');
-            setRobotLight('#666');
+            // Yellow while moving
+            setRobotLight('#FFD700');
+            updateBrainScreen('Đang di chuyển…');
+            updateStatus(direction === 'up' ? 'Đang đi lên' : 'Đang đi xuống', 'normal');
             
             robot.style.top = floorPositions[targetFloor] + 'px';
             
@@ -502,99 +396,37 @@
                 isMoving = false;
                 robot.classList.remove('moving');
                 
-                // Check for red sensor at current floor
-                const sensor = document.getElementById(`sensor-${currentFloor}`);
-                if (sensor.style.background === 'red') {
-                    setRobotLight('#FFD700'); // Yellow
-                    updateBrainScreen(`Arrived at floor ${currentFloor}`);
-                    updateStatus('Arrived at floor', 'arrived');
+                if (currentFloor === 1) {
+                    setRobotLight('#4CAF50'); // Green at floor 1
+                    updateBrainScreen('Tầng 1');
+                    updateStatus('Đã tới', 'arrived');
                 } else {
-                    setRobotLight('#666'); // Normal
-                    updateBrainScreen(`Floor ${currentFloor} - Ready`);
-                    updateStatus('Ready for next command', 'normal');
+                    setRobotLight('#F44336'); // Red at floor 2
+                    updateBrainScreen('Tầng 2');
+                    updateStatus('Đã tới', 'arrived');
                 }
-                
-                // Check for obstacle
-                if (obstacleActive) {
-                    emergencyStop();
-                }
-            }, 1000);
+            }, 600);
         }
         
-        function emergencyStop() {
-            if (isMoving) {
-                robot.classList.remove('moving');
-                isMoving = false;
-            }
-            
-            setRobotLight('#F44336'); // Red
-            updateBrainScreen('Doors opening – Please wait');
-            updateStatus('EMERGENCY STOP', 'emergency');
-        }
-        
-        function setFloorColor(floor, color) {
-            highlightDescription('optical-desc');
-            const sensor = document.getElementById(`sensor-${floor}`);
-            sensor.style.background = color;
-        }
-        
-        function clearAllColors() {
-            for (let i = 1; i <= 5; i++) {
-                const sensor = document.getElementById(`sensor-${i}`);
-                sensor.style.background = '#ccc';
-            }
-        }
-        
-        // Touch LED - Go Up
+        // Touch LED - Go Up to floor 2
         document.getElementById('touchled').addEventListener('click', () => {
-            if (isMoving || obstacleActive) return;
-            
+            if (isMoving) return;
             highlightDescription('touchled-desc');
-            
-            if (currentFloor < 5) {
-                moveRobot(currentFloor + 1, 'up');
-            } else {
-                updateBrainScreen('Đã ở tầng cao nhất');
-                updateStatus('Cannot go higher', 'normal');
-            }
+            moveRobot(2, 'up');
         });
         
-        // Bumper - Go Down
+        // Bumper - Go Down to floor 1
         document.getElementById('bumper').addEventListener('click', () => {
-            if (isMoving || obstacleActive) return;
-            
+            if (isMoving) return;
             highlightDescription('bumper-desc');
-            
-            if (currentFloor > 1) {
-                moveRobot(currentFloor - 1, 'down');
-            } else {
-                updateBrainScreen('Đã ở tầng trệt');
-                updateStatus('Cannot go lower', 'normal');
-            }
+            moveRobot(1, 'down');
         });
         
-        // Obstacle toggle
-        document.getElementById('obstacle-btn').addEventListener('click', () => {
-            obstacleActive = !obstacleActive;
-            
-            if (obstacleActive) {
-                obstacle.style.opacity = '1';
-                obstacle.style.top = (floorPositions[currentFloor] - 50) + 'px';
-                emergencyStop();
-                document.getElementById('obstacle-btn').textContent = 'Clear Obstacle';
-            } else {
-                obstacle.style.opacity = '0';
-                setRobotLight('#666');
-                updateBrainScreen(`Tầng ${currentFloor} - Sẵn sàng`);
-                updateStatus('Obstacle cleared', 'normal');
-                document.getElementById('obstacle-btn').textContent = 'Toggle Obstacle';
-            }
-        });
-        
-        // Initialize
-        updateBrainScreen('Tầng 1 - Sẵn sàng');
-        updateStatus('System initialized', 'normal');
-        setRobotLight('#666');
+        // Initialize at floor 1
+        robot.style.top = floorPositions[1] + 'px';
+        setRobotLight('#4CAF50');
+        updateBrainScreen('Tầng 1');
+        updateStatus('Đang chờ bấm chạy', 'normal');
     </script>
 </body>
 </html>
